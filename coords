@@ -1,4 +1,8 @@
 import requests
+import csv
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.basemap import Basemap
 
 def get_coordinates(osm_node_id):
     overpass_url = "http://overpass-api.de/api/interpreter"
@@ -18,10 +22,41 @@ def get_coordinates(osm_node_id):
 
 
 start_node_id = "60922878"  
-end_node_id = "595757808"    
+end_node_id = "595757808"  
 
 start_lat, start_lon = get_coordinates(start_node_id)
 end_lat, end_lon = get_coordinates(end_node_id)
 
-print(f"Start Node Coordinates: ({start_lat}, {start_lon})")
-print(f"End Node Coordinates: ({end_lat}, {end_lon})")
+#print(f"Start Node Coordinates: ({start_lat}, {start_lon})")
+#print(f"End Node Coordinates: ({end_lat}, {end_lon})")'
+
+map = Basemap(
+    projection='merc',
+    lat_0=40.71427,
+    lon_0=-74.00597,
+    resolution='l'
+)
+
+with open(r"C:\Users\roude\Documents\GitHub\UberHackathon\movement-speeds-quarterly-by-hod-new-york-2019-Q2.csv", "r") as file:
+
+    csv_reader = csv.reader(file)
+
+    next(csv_reader) # skip the header row
+
+    map.lat_0 = csv_reader
+    
+    for row in csv_reader:
+        # Access the value from a specific column by index
+        startID = row[6]
+        endID = row[7]
+
+        start_lat, start_lon = get_coordinates(startID)
+        end_lat, end_lon = get_coordinates(endID)
+
+        map.plot(start_lat, start_lon, 'o')
+        map.plot(end_lat, end_lon, 's')
+
+plt.legend()
+plt.show()        
+
+        
