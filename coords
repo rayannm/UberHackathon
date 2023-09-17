@@ -1,0 +1,27 @@
+import requests
+
+def get_coordinates(osm_node_id):
+    overpass_url = "http://overpass-api.de/api/interpreter"
+    overpass_query = f"""
+    [out:json];
+    node({osm_node_id});
+    out;
+    """
+    response = requests.get(overpass_url, params={"data": overpass_query})
+    data = response.json()
+    if 'elements' in data and len(data['elements']) > 0:
+        latitude = data['elements'][0]['lat']
+        longitude = data['elements'][0]['lon']
+        return latitude, longitude
+    else:
+        return None, None
+
+
+start_node_id = "60922878"  
+end_node_id = "595757808"    
+
+start_lat, start_lon = get_coordinates(start_node_id)
+end_lat, end_lon = get_coordinates(end_node_id)
+
+print(f"Start Node Coordinates: ({start_lat}, {start_lon})")
+print(f"End Node Coordinates: ({end_lat}, {end_lon})")
