@@ -48,9 +48,13 @@ with Image.open("1") as im:
         for j in range(len(nodes)):
             if (i != j):
                 if (findDistance(nodes[i], nodes[j]) < distanceThresh):
-                    connections.append((i, j))
+                    velocity = random.randrange(10, 50)
+                    connections.append((i, j, velocity))
                     draw.line([node[i], node[j]], fill = 'black')
 
 
 #display
 picture.show()
+
+# city is now generated
+# a star stuff
