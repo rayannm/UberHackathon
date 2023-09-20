@@ -13,7 +13,7 @@ from sklearn.metrics import mean_squared_error
 import warnings
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv("traffic.csv")
+data = pd.read_csv("./traffic.csv")
 data.head()
 
 data["DateTime"]= pd.to_datetime(data["DateTime"])
