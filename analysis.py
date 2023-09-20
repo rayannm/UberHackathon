@@ -38,5 +38,5 @@ for i, junction in enumerate(junction_stats['Junction']):
     std = junction_stats.iloc[i]['std']
     plt.text(df['DateTime'].max(), mean, f" Mean: {mean:.2f}\n Std Dev: {std:.2f}", color=colors[i])
 
-
+plt.show()
 
