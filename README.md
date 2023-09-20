@@ -82,4 +82,4 @@ pip install -r requirements.txt
 python analysis.py
 ```
 
-Ensure that you have appropriate permissions to execute the bash scripts (`install.sh` and `run_coords.sh`). If needed, you can modify the permissions using the `chmod` command.
+Ensure that you have appropriate permissions to execute the bash scripts (`run_website.sh`, `peakTimeAnalysis.sh`, `analysis.sh`). If needed, you can modify the permissions using the `chmod` command.
