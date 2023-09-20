@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Install Python dependencies from requirements.txt
+pip3.8 install -r requirements.txt
+
+# Run coords.peakTimeAnalysis
+python3.8 peakTimeAnalysis.py
