@@ -60,7 +60,7 @@ export default function Home() {
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>Résume & GitHub</h2>
             <div className="flex justify-between">
-              <a href="https://www.virtualglobalhackathon.org/resume.pdf" className="text-blue-600 underline" onMouseEnter={() => handleHover('Click to download techincal documentation')}
+              <a href="https://github.com/rayannm/UberHackathon/blob/main/uberhackathonlatex.pdf" className="text-blue-600 underline" onMouseEnter={() => handleHover('Click to download techincal documentation')}
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>Download Technical Documentation (LATEX)</a>
               <div>
