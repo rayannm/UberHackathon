@@ -50,6 +50,7 @@ export default function Home() {
         <h1 className="text-3xl font-semibold" onMouseEnter={() => handleHover('Tech Support Titans')}
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>Tech Support Titans</h1>
+        <img src="https://github.com/rayannm/UberHackathon/blob/main/images/logo.png?raw=true" alt="logo" class="container"/>
       </header>
 
       <main className="flex-grow p-4" style={{ fontSize: `${fontSize}px` }}>

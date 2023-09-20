@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  right: auto;
+  
+}
+
+.logo {
+  max-width: 100%; /* Ensure the image doesn't exceed its original size */
+  max-height: 100%; /* Ensure the image doesn't exceed its original size */
+}
