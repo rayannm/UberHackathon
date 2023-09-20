@@ -1,8 +1,5 @@
 # Uber Hackathon
 
-
-# Website setup
-
 This README provides step-by-step instructions to set up the website, install the necessary dependencies using a bash script, and run a Python script using a separate bash script.
 
 ## Prerequisites
@@ -10,10 +7,10 @@ This README provides step-by-step instructions to set up the website, install th
 Ensure that the following are installed on your system:
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
-- [Python](https://www.python.org/)
-- [pip](https://pip.pypa.io/)
+- [Python 3.8](https://www.python.org/downloads/release/python-380/)
+- [pip for Python 3.8](https://pip.pypa.io/)
 
-## React Project Setup
+## Website Project Setup
 
 1. Clone the entire project repository.
 
@@ -34,29 +31,23 @@ The `run_website.sh` script contains the following:
 ```bash
 #!/bin/bash
 
-# Run npm install for the React project
+cd uberhackathon
 npm install
+npm run dev
 ```
 
-## Running Coords.py
+## Running peakTimeAnalysis.py
 
-1. Navigate to the directory containing `coords.py`.
-
-2. Create a Python virtual environment (optional but recommended):
+1. Navigate to the directory containing `peakTimeAnalysis.py`.
+   
+2. Run the following command to install the Python dependencies and execute `peakTimeAnalysis.py` using a bash script:
 
 ```bash
-python -m venv venv
-source venv/bin/activate
+chmod +x peakTimeAnalysis.sh
+./peakTimeAnalysis.sh
 ```
 
-3. Run the following command to install the Python dependencies and execute `coords.py` using a bash script:
-
-```bash
-chmod +x run_coords.sh
-./run_coords.sh
-```
-
-The `run_coords.sh` script contains the following:
+The `peakTimeAnalysis.sh` script contains the following:
 
 ```bash
 #!/bin/bash
@@ -64,8 +55,31 @@ The `run_coords.sh` script contains the following:
 # Install Python dependencies from requirements.txt
 pip install -r requirements.txt
 
-# Run coords.py
-python coords.py
+# Run coords.peakTimeAnalysis
+python peakTimeAnalysis.py
+```
+
+## Running analysis.py
+
+1. Navigate to the directory containing `analysis.py`.
+   
+2. Run the following command to install the Python dependencies and execute `analysis.py` using a bash script:
+
+```bash
+chmod +x analysis.sh
+./analysis.sh
+```
+
+The `analysis.sh` script contains the following:
+
+```bash
+#!/bin/bash
+
+# Install Python dependencies from requirements.txt
+pip install -r requirements.txt
+
+# Run analysis.py
+python analysis.py
 ```
 
 Ensure that you have appropriate permissions to execute the bash scripts (`install.sh` and `run_coords.sh`). If needed, you can modify the permissions using the `chmod` command.
