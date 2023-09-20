@@ -71,35 +71,54 @@ export default function Home() {
           </section>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <section className="bg-black rounded-lg p-4" onMouseEnter={() => handleHover('Integration with Public Transport')}
+            <section className="bg-black rounded-lg p-4" >
+              <h2 onMouseEnter={() => handleHover('Integration with Public Transport')}
             onMouseLeave={() => handleLeave()}
-            ref={sectionRef}>
-              <h2 className="text-xl font-semibold mb-4 text-white">Integration with Public Transport</h2>
+            ref={sectionRef} className="text-xl font-semibold mb-4 text-white">Integration with Public Transport</h2>
+              <p onMouseEnter={() => handleHover('For UberLand\'s transportation system to function effectively, ridesharing and public transportation must be integrated seamlessly. We can decrease the use of private vehicles by merging these two modes of transportation. Private vehicles, while useful for solitary travel, have significantly increased traffic congestion. Each private vehicle on the road in a city where the roads are already congested worsens the issue, increasing commuting times, increasing greenhouse gas emissions, and lowering overall quality of life. Private vehicles generally only carry a limited number of passengers, which results in poor space usage. ')}
+            onMouseLeave={() => handleLeave()}
+            ref={sectionRef} className="text-white">
+              For UberLand's transportation system to function effectively, ridesharing and public transportation must be integrated seamlessly. We can decrease the use of private vehicles by merging these two modes of transportation. Private vehicles, while useful for solitary travel, have significantly increased traffic congestion. Each private vehicle on the road in a city where the roads are already congested worsens the issue, increasing commuting times, increasing greenhouse gas emissions, and lowering overall quality of life. Private vehicles generally only carry a limited number of passengers, which results in poor space usage. 
+              </p>
             </section>
 
-            <section className="bg-black rounded-lg p-4" onMouseEnter={() => handleHover('Integration with Public Transport')}
+            <section className="bg-black rounded-lg p-4">
+              <h2 className="text-xl font-semibold mb-4 text-white"  onMouseEnter={() => handleHover('Traffic Congestion and Travel Times')}
+            onMouseLeave={() => handleLeave()}
+            ref={sectionRef}>Traffic Congestion and Travel Times</h2>
+              <p className='text-white'  onMouseEnter={() => handleHover('Both people and companies in UberLand are significantly impacted by traffic congestion. One of the most major repercussions is the lengthening of commutes, which can have an impact on inhabitants personal and professional lives. Economic expenses associated with traffic congestion are also significant. Longer delivery durations and missed shipments can disrupt supply chains and raise operational costs, which can result in higher product prices. Traffic congestion has an impact on the environment as well. Vehicle emissions rise on congested roads, contributing to air pollution and related health problems.')}
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>
-              <h2 className="text-xl font-semibold mb-4 text-white">Traffic Congestion and Travel Times</h2>
+              Both people and companies in UberLand are significantly impacted by traffic congestion. One of the most major repercussions is the lengthening of commutes, which can have an impact on inhabitants' personal and professional lives. Economic expenses associated with traffic congestion are also significant. Longer delivery durations and missed shipments can disrupt supply chains and raise operational costs, which can result in higher product prices. Traffic congestion has an impact on the environment as well. Vehicle emissions rise on congested roads, contributing to air pollution and related health problems.
+              </p>
+
             </section>
 
-            <section className="bg-black rounded-lg p-4" onMouseEnter={() => handleHover('Integration with Public Transport')}
+            <section className="bg-black rounded-lg p-4">
+              <h2 className="text-xl font-semibold mb-4 text-white"  onMouseEnter={() => handleHover('Environmental Impact')}
             onMouseLeave={() => handleLeave()}
-            ref={sectionRef}>
-              <h2 className="text-xl font-semibold mb-4 text-white">Environmental Impact</h2>
+            ref={sectionRef}>Environmental Impact</h2>
             </section>
 
-            <section className="bg-black rounded-lg p-4" onMouseEnter={() => handleHover('Integration with Public Transport')}
+            <section className="bg-black rounded-lg p-4" >
+              <h2 className="text-xl font-semibold mb-4 text-white" onMouseEnter={() => handleHover('Accessibility and Inclusivity')}
             onMouseLeave={() => handleLeave()}
-            ref={sectionRef}>
-              <h2 className="text-xl font-semibold mb-4 text-white">Accessibility and Inclusivity</h2>
+            ref={sectionRef}>Accessibility and Inclusivity</h2>
+            <p onMouseEnter={() => handleHover('In order to render and fully compile a web page, we developed a straightforward and effective user interface using the cutting-edge JavaScript framework React.js with Next.js, which works with the native compiler of Node.js. This has advantages over plain HTML in that it loads pages more quickly, uses less memory and storage space, and loads pages more quickly. This is remarkable because not everyone has access to powerful machines that can perform the A* algorithm. This is affordable and available. The User Interfaces main objective was to excel in both visual appeal and accessibility while meeting the needs of a wide range of age demographics. This understands the need for text-to-speech capabilities, font customization, and clever color schemes to accommodate everyone. ')}
+            onMouseLeave={() => handleLeave()}
+            ref={sectionRef} className='text-white'>In order to render and fully compile a web page, we developed a straightforward and effective user interface using the cutting-edge JavaScript framework React.js with Next.js, which works with the native compiler of Node.js. This has advantages over plain HTML in that it loads pages more quickly, uses less memory and storage space, and loads pages more quickly. This is remarkable because not everyone has access to powerful machines that can perform the A* algorithm. This is affordable and available. The User Interface's main objective was to excel in both visual appeal and accessibility while meeting the needs of a wide range of age demographics. This understands the need for text-to-speech capabilities, font customization, and clever color schemes to accommodate everyone. </p>
             </section>
 
-            <section>
+            <section className='bg-black rounded-lg p-4'>
 
-              <h1>Graphs generated by Analysis.py and peakTimeAnalysis.py</h1>
-              <img src="uberhackathon/public/analysis.png" alt="Analysis.py" className="w-full h-48 object-cover rounded-lg" />
-              <img src="uberhackathon/public/peakTimeAnalysis.png" alt="peakTimeAnalysis.py" className="w-full h-48 object-cover rounded-lg" />
+              <h1 className='text-xl font-semibold mb-4 text-white'>Graph generated by Analysis.py</h1>
+              <img src="https://github.com/rayannm/UberHackathon/blob/main/images/analysis.png?raw=true" alt="Analysis.py" className="w-full h-48 object-cover rounded-lg" />
+
+            </section>
+            <section className='bg-black rounded-lg p-4'>
+
+            <h1 className='text-xl font-semibold mb-4 text-white'>Graph generated by peakTimeAnalysis.py</h1>
+            <img src="https://github.com/rayannm/UberHackathon/blob/main/images/peakTimeAnalysis.png?raw=true" alt="peakTimeAnalysis.py" className="w-full h-48 object-cover rounded-lg" />
 
             </section>
           </div>
