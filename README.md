@@ -8,7 +8,7 @@ Ensure that the following are installed on your system:
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [Python 3.8](https://www.python.org/downloads/release/python-380/)
-- [pip for Python 3.8](https://pip.pypa.io/)
+- [pip for Python 3.8](https://pip.pypa.io/en/stable/installation/)
 
 ## Website Project Setup
 
