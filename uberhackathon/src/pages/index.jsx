@@ -63,7 +63,7 @@ export default function Home() {
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>Download Technical Documentation (LATEX)</a>
               <div>
-                <a href="https://github.com/monek1" className="text-blue-600 underline mr-4" onMouseEnter={() => handleHover('Github Repository')}
+                <a href="https://github.com/rayannm/UberHackathon" className="text-blue-600 underline mr-4" onMouseEnter={() => handleHover('Github Repository')}
             onMouseLeave={() => handleLeave()}
             ref={sectionRef}>Github Repository</a>
               </div>
@@ -115,7 +115,7 @@ export default function Home() {
       </button>
 
       <footer className="bg-white text-blue-600 text-center py-4 shadow-md">
-        <p className="text-lg" style={{ fontSize: `${fontSize}px` }}>Created by Vinesh R., Gregory R., Rayan M., Maadhav D.</p>
+        <p className="text-lg" style={{ fontSize: `${fontSize}px` }}>Created by Vinesh Ramroop, Gregory Roudenko, Rayan Mubarak, Maadhav Deekshita</p>
       </footer>
 
       <button
