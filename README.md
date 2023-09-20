@@ -83,3 +83,11 @@ python3.8 analysis.py
 ```
 
 Ensure that you have appropriate permissions to execute the bash scripts (`run_website.sh`, `peakTimeAnalysis.sh`, `analysis.sh`). If needed, you can modify the permissions using the `chmod` command.
+
+# Graphs Generated
+
+## peakTimeAnalysis.py
+![alt text](https://github.com/rayannm/UberHackathon/blob/main/images/peakTimeAnalysis.png)
+
+## Analysis.py
+![alt text](https://github.com/rayannm/UberHackathon/blob/main/images/analysis.png)
