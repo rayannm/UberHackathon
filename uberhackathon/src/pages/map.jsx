@@ -1,11 +1,18 @@
+import React from 'react';
 import Head from 'next/head';
-import styles from '../styles/globals.css';
+import "./App.css"
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 export default function MapPage() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Your form submission logic here
-    console.log('Form submitted');
+  const [startAddress, setStartAddress] = React.useState('');
+  const [endAddress, setEndAddress] = React.useState('');
+
+  const handleSelectStart = async (value) => {
+    setStartAddress(value);
+  };
+
+  const handleSelectEnd = async (value) => {
+    setEndAddress(value);
   };
 
   return (
@@ -22,30 +29,61 @@ export default function MapPage() {
       {/* Main Content */}
       <main className="flex-grow p-4">
         <div className="bg-white rounded-lg shadow-lg p-8 mx-4 my-8">
-          <form onSubmit={handleSubmit}>
-            {/* Map & Location Inputs */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Map & Location</h2>
-              <div className="flex justify-between">
-                <div className="w-1/2">
-                  <input type="text" placeholder="Where are you?" className="p-2 mb-4 w-full rounded border" />
-                  <input type="text" placeholder="Where do you want to go?" className="p-2 mb-4 w-full rounded border" />
-                  {/* Submit Button */}
-                  <button type="submit" className="p-2 w-full rounded bg-green-600 text-white">Submit</button>
-                </div>
-                <div className="w-1/2">
-                  {/* Your map can go here */}
-                </div>
-              </div>
-            </section>
-          </form>
+          {/* Map & Location Inputs */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Map & Location</h2>
+            <div className="flex justify-between">
+              <div className="w-1/2">
+                <PlacesAutocomplete
+                  value={startAddress}
+                  onChange={setStartAddress}
+                  onSelect={handleSelectStart}
+                >
+                  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                    <div>
+                      <input {...getInputProps({ placeholder: 'Where are you?' })} className="p-2 mb-4 w-full rounded border" />
+                      <div>
+                        {loading ? <div>Loading...</div> : null}
+                        {suggestions.map((suggestion, index) => {
+                          return (
+                            <div {...getSuggestionItemProps(suggestion)}>
+                              {suggestion.description}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </PlacesAutocomplete>
 
-          {/* Frame for JS/Python Output */}
-          <section className="bg-black rounded-lg p-4">
-            <h2 className="text-xl font-semibold mb-4">JS/Python Output</h2>
-            {/* Leave this section blank for your JS/Python output */}
-            <div className="w-full h-48 bg-white rounded-lg">
-              {/* Your image will be displayed here */}
+                <PlacesAutocomplete
+                  value={endAddress}
+                  onChange={setEndAddress}
+                  onSelect={handleSelectEnd}
+                >
+                  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                    <div>
+                      <input {...getInputProps({ placeholder: 'Where do you want to go?' })} className="p-2 mb-4 w-full rounded border" />
+                      <div>
+                        {loading ? <div>Loading...</div> : null}
+                        {suggestions.map((suggestion, index) => {
+                          return (
+                            <div {...getSuggestionItemProps(suggestion)}>
+                              {suggestion.description}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </PlacesAutocomplete>
+
+                {/* Submit Button */}
+                <button type="submit" className="p-2 w-full rounded bg-green-600 text-white">Submit</button>
+              </div>
+              <div className="w-1/2">
+                {/* Your map can go here */}
+              </div>
             </div>
           </section>
         </div>
