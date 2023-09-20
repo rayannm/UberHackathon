@@ -53,10 +53,10 @@ The `peakTimeAnalysis.sh` script contains the following:
 #!/bin/bash
 
 # Install Python dependencies from requirements.txt
-pip install -r requirements.txt
+pip3.8 install -r requirements.txt
 
 # Run coords.peakTimeAnalysis
-python peakTimeAnalysis.py
+python3.8 peakTimeAnalysis.py
 ```
 
 ## Running analysis.py
@@ -76,10 +76,10 @@ The `analysis.sh` script contains the following:
 #!/bin/bash
 
 # Install Python dependencies from requirements.txt
-pip install -r requirements.txt
+pip3.8 install -r requirements.txt
 
 # Run analysis.py
-python analysis.py
+python3.8 analysis.py
 ```
 
 Ensure that you have appropriate permissions to execute the bash scripts (`run_website.sh`, `peakTimeAnalysis.sh`, `analysis.sh`). If needed, you can modify the permissions using the `chmod` command.
